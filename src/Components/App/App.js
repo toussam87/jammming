@@ -1,10 +1,31 @@
-<div>
-  <h1>Ja<span class="highlight">mmm</span>ing</h1>
-  <div class="App">
-    <!-- Add a SearchBar component -->
-    <div class="App-playlist">
-      <!-- Add a SearchResults component -->
-      <!-- Add a Playlist component -->
-    </div>
-  </div>
-</div>
+import React, { Component } from 'react';
+import './App.css';
+import SearchBar from './Components/SearchBar/SearchBar';
+import SearchResults from './Components/SearchResults/SearchResults';
+import PlayList from './Components/PlayList/PlayList';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+       searchResults: [
+        "name", "artist", "album"
+       ]
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+         <SearchBar />
+        <div className="App-playlist">
+          <SearchResults searchResults={this.state.searchResults} />
+          <PlayList />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;
