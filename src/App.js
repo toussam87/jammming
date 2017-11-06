@@ -9,10 +9,10 @@ class App extends Component {
     super(props);
 
     this.state = {
-       SearchResults: [
+       searchResults: [
         "name", "artist", "album"
        ]
-    }
+    };
   }
 
   render() {
@@ -21,7 +21,7 @@ class App extends Component {
          <SearchBar />
         <div className="App-playlist">
           <SearchResults />
-          <PlayList />
+          <PlayList searchResults={this.state.searchResults} />
         </div>
       </div>
     );
