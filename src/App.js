@@ -36,8 +36,6 @@ addTrack(track) {
    this.setState({playlistTracks: tracks});
 }
 
-a
-
   search(term) {
     Spotify.search(term).then(searchResults => {
       this.setState({searchResults: searchResults});
