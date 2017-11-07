@@ -19,6 +19,8 @@ class App extends Component {
     this.addTrack = this.addTrack.bind(this); 
     this.removeTrack = this.removeTrack.bind(this);
     this.updatePlaylistName = this.updatePlaylistName.bind(this);
+    this.savePlaylist = this.savePlaylist.bind(this);
+    this.search = this.search.bind(this);
   }
 
 addTrack(track) {
@@ -37,6 +39,10 @@ addTrack(track) {
   updatePlaylistName(name) {
     this.setState({
       playlistName: name })
+  }
+
+  savePlaylist() {
+    const trackURIs = this.state.playlistTracks.map(track => track.uri)
   }
 
   search(term) {
