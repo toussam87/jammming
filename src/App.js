@@ -18,6 +18,7 @@ class App extends Component {
     };
     this.addTrack = this.addTrack.bind(this); 
     this.removeTrack = this.removeTrack.bind(this);
+    this.updatePlaylistName = this.updatePlaylistName.bind(this);
   }
 
 addTrack(track) {
@@ -32,6 +33,11 @@ addTrack(track) {
    tracks = tracks.filter(currentTrack => currentTrack.id !== track.id);
    this.setState({playlistTracks: tracks});
 }
+
+  updatePlaylistName(name) {
+    this.setState({
+      playlistName: name })
+  }
 
   search(term) {
     Spotify.search(term).then(searchResults => {
