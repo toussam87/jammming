@@ -14,21 +14,25 @@ class App extends Component {
         "name", "artist", "album"
        ],
        playlistName: '',
-       playlistTracks: [
-         "name", "artists", "album"
-       ]
+       playlistTracks: []
     };
     this.addTrack = this.addTrack.bind(this); 
     this.removeTrack = this.removeTrack.bind(this);
     // this.updatePlaylistName = this.updatePlaylistName.bind(this);
   }
 
-addTrack(track) {
-  if(this.state.playlistTracks.indexOf(track) === -1) {
-    this.state.playlistTracks.push(track);
-    this.setState({ playlistTracks: this.state.playlistTracks });
+// addTrack(track) {
+//   if(this.state.playlistTracks.indexOf(track) === -1) {
+//     this.state.playlistTracks.push(track);
+//     this.setState({ playlistTracks: this.state.playlistTracks });
+//   }
+// }
+
+ addTrack(track) {
+     let tracks = this.state.playlistTracks;
+         tracks = tracks.push(track);
+         this.setState({playlistTracks: tracks })
   }
-}
 
   removeTrack(track) {
    let tracks = this.state.playlistTracks;
