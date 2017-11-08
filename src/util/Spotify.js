@@ -44,6 +44,14 @@ const Spotify = {
     });
   },
 
+  thingy(name, trackUris) {
+    if (!name === '' && !!trackUris === '') {
+      return name, trackUris
+    }
+
+    const accessTokenVar = accessToken;
+  },
+
   savePlaylist(name, trackUris) {
     if (!name || !trackUris.length) {
       return;

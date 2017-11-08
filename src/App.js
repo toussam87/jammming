@@ -23,18 +23,18 @@ class App extends Component {
     this.search = this.search.bind(this);
   }
 
-addTrack(track) {
+  addTrack(track) {
   if(this.state.playlistTracks.indexOf(track) === -1) {
     this.state.playlistTracks.push(track);
     this.setState({ playlistTracks: this.state.playlistTracks });
+    }
   }
-}
 
   removeTrack(track) {
    let tracks = this.state.playlistTracks;
    tracks = tracks.filter(currentTrack => currentTrack.id !== track.id);
    this.setState({playlistTracks: tracks});
-}
+  }
 
   updatePlaylistName(name) {
     this.setState({
@@ -42,7 +42,13 @@ addTrack(track) {
   }
 
   savePlaylist() {
-    const trackURIs = this.state.playlistTracks.map(track => track.uri)
+    const trackURIs = this.state.playlistTracks.map(track => track.uri);
+
+    Spotify.savePlaylist();
+
+    resetPlayList() {
+      this.state = this.searchResults;
+    }
   }
 
   search(term) {
