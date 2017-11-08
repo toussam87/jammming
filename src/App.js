@@ -3,7 +3,7 @@ import './App.css';
 import SearchBar from './Components/SearchBar/SearchBar';
 import SearchResults from './Components/SearchResults/SearchResults';
 import PlayList from './Components/PlayList/PlayList';
-import Spotify from './Components/util/Spotify'; 
+import Spotify from './util/Spotify'; 
 
 class App extends Component {
   constructor(props) {
